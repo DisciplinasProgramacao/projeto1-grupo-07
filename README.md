@@ -4,14 +4,16 @@ Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 
 ## Alunos integrantes da equipe
 
-* João Francisco Carvalho Soares de Oliveira Queiroga
 * Diogo Chaves Torres
-* Saulo Pereira Vasconcelos
+* Gustavo Henrique de Lima e Silva
+* João Francisco Carvalho Soares de Oliveira Queiroga
 * Philippe Roberto Dutra Chaves Vieira
-* Gustavo
+* Saulo Pereira Vasconcelos
+
+
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Cleiton Silva Tavares
+
 
