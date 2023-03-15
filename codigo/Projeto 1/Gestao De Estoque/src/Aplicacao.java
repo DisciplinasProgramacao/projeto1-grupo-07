@@ -1,7 +1,8 @@
 import javax.swing.JOptionPane;
 
 public final class Aplicacao {
-	Estoque estoque = new Estoque();
+	static Estoque estoque = new Estoque();
+
 	public static void menuPrincipal(boolean running) {
 		int opPincipal;
 		boolean rodando = running; 
