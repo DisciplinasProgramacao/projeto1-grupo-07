@@ -23,7 +23,7 @@ public class Estoque {
 	}
 
 	public String getAbaixoDoMinimo() {
-		String s = "";
+		String s = "Id - Descrição - Quantidade - Quantidade Mínima\n";
 		for (int i = 0; i < produtos.size(); i++) {
 			if (!produtos.get(i).temSuficiente())
 				s += i + "\t" + produtos.get(i).toString() + "\n";
