@@ -41,6 +41,8 @@ public final class Aplicacao {
 					+ "\n[0]Voltar",
 			
 					"Menu Produtos", JOptionPane.OK_CANCEL_OPTION));
+			Produto p;
+			int qtd;
 			switch(opProduto){
 				case 0:				//Consultar Estoque 
 					rMP = false;
@@ -49,35 +51,35 @@ public final class Aplicacao {
 					String nome = JOptionPane.showInputDialog(null, "Digite o nome do novo produto: ", "Cadastrar Produto", JOptionPane.OK_CANCEL_OPTION);
 					float preco = Float.parseFloat(JOptionPane.showInputDialog(null, "Digite o preco do novo produto: ", "Cadastrar Produto", JOptionPane.OK_CANCEL_OPTION));
 					int margem = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a margem de lucro do novo produto: ", "Cadastrar Produto", JOptionPane.OK_CANCEL_OPTION));
-					int qtd = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade de itens a ser adicionada: ", "Cadastrar Produto", JOptionPane.OK_CANCEL_OPTION));
-					Produto p = new Produto(nome,preco,margem,qtd);
+					qtd = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade de itens a ser adicionada: ", "Cadastrar Produto", JOptionPane.OK_CANCEL_OPTION));
+					p = new Produto(nome,preco,margem,qtd);
 					estoque.cadastraProduto(p);
 					JOptionPane.showMessageDialog(null,"Produto Cadastrado" , "Cadastrar Produto", JOptionPane.INFORMATION_MESSAGE);
 					break;
 				case 2:				//Vender Produto
 					idP = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o ID do produto a ser vendido", "Vender Produto", JOptionPane.OK_CANCEL_OPTION));
-					int qtd = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade de itens vendida", "Vender Produto", JOptionPane.OK_CANCEL_OPTION));
+					qtd = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade de itens vendida", "Vender Produto", JOptionPane.OK_CANCEL_OPTION));
 					estoque.reporProduto(idP,qtd);
-					Produto p = estoque.getProduto(idP);
+					p = estoque.getProduto(idP);
 					JOptionPane.showMessageDialog(null, p , "Vender Produto", JOptionPane.INFORMATION_MESSAGE);
 					break;
 				case 3:				//Excluir Produto
 					idP = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o ID do produto a ser vendido", "Vender Produto", JOptionPane.OK_CANCEL_OPTION));
-					int qtd = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade de itens vendida", "Vender Produto", JOptionPane.OK_CANCEL_OPTION));
+					qtd = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade de itens vendida", "Vender Produto", JOptionPane.OK_CANCEL_OPTION));
 					estoque.reporProduto(idP,qtd);
-					Produto p = estoque.getProduto(idP);
+					p = estoque.getProduto(idP);
 					JOptionPane.showMessageDialog(null, p , "Vender Produto", JOptionPane.INFORMATION_MESSAGE); 
 					break;
 				case 4:				//Repor Produto
 					idP = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o ID do produto a ser reposto", "Repor Produto", JOptionPane.OK_CANCEL_OPTION));
-					int qtd = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade de itens à serem repostos", "Repor Produto", JOptionPane.OK_CANCEL_OPTION));
+					qtd = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade de itens à serem repostos", "Repor Produto", JOptionPane.OK_CANCEL_OPTION));
 					estoque.reporProduto(idP,qtd);
-					Produto p = estoque.getProduto(idP);
+					p = estoque.getProduto(idP);
 					JOptionPane.showMessageDialog(null, p , "Repor Produto", JOptionPane.INFORMATION_MESSAGE); 
 					break;
 				case 5:				//Consultar Produto
 					idP = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o ID do produto a ser consultado", "Consultar Produto", JOptionPane.OK_CANCEL_OPTION));
-					Produto p = estoque.getProduto(idP);
+					p = estoque.getProduto(idP);
 					JOptionPane.showMessageDialog(null, p , "Consultar Produto", JOptionPane.INFORMATION_MESSAGE);
 					break;
 				default:
@@ -99,7 +101,7 @@ public final class Aplicacao {
 						"[1]Consultar Estoque "
 					+ "\n[0]Voltar", 
 					"Menu Estoque", JOptionPane.OK_CANCEL_OPTION));
-			switch(opProduto){
+			switch(opEstoque){
 				case 0:				//Voltar
 					rME = false;
 					break;
