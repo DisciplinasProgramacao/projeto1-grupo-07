@@ -5,7 +5,7 @@ public class Produto {
 	private int quantidade;
 	private int quantidadeMinima;
 
-	public Produto(String descricao, float precoCusto, int margemLucro, int quantidade) {
+	public Produto(String descricao, float precoCusto, int margemLucro, int quantidade, int quantidadeMinima) {
 		this.descricao = descricao;
 		this.precoCusto = precoCusto;
 		this.quantidade = quantidade;
@@ -16,6 +16,10 @@ public class Produto {
 		} else {
 			this.margemLucro = margemLucro;
 		}
+		this.quantidadeMinima = quantidadeMinima;
+	}
+	public Produto(String descricao, float precoCusto, int margemLucro, int quantidade) {
+		this(descricao, precoCusto, margemLucro, quantidade, 0);
 	}
 
 	public Produto(String descricao, float precoCusto, int margemLucro) {
@@ -66,7 +70,7 @@ public class Produto {
 	}
 	
 	public float getPrecoVenda() {
-		return ((margemLucro / 100) + 1) * precoCusto + this.getImposto();
+		return ((margemLucro / 100.0f) + 1) * precoCusto + this.getImposto();
 	}
 
 	public float getImposto() {
