@@ -43,6 +43,7 @@ public final class Aplicacao {
 					"Menu Produtos", JOptionPane.OK_CANCEL_OPTION));
 			Produto p;
 			int qtd;
+			int min;
 			switch(opProduto){
 				case 0:				//Consultar Estoque 
 					rMP = false;
@@ -52,28 +53,29 @@ public final class Aplicacao {
 					float preco = Float.parseFloat(JOptionPane.showInputDialog(null, "Digite o preco do novo produto: ", "Cadastrar Produto", JOptionPane.OK_CANCEL_OPTION));
 					int margem = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a margem de lucro do novo produto: ", "Cadastrar Produto", JOptionPane.OK_CANCEL_OPTION));
 					qtd = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade de itens a ser adicionada: ", "Cadastrar Produto", JOptionPane.OK_CANCEL_OPTION));
-					p = new Produto(nome,preco,margem,qtd);
+					min = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade minima de itens no estoque", "Cadastrar Produto", JOptionPane.OK_CANCEL_OPTION));
+					p = new Produto(nome, preco, margem, qtd, min);
 					estoque.cadastraProduto(p);
 					JOptionPane.showMessageDialog(null,"Produto Cadastrado" , "Cadastrar Produto", JOptionPane.INFORMATION_MESSAGE);
 					break;
 				case 2:				//Vender Produto
 					idP = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o ID do produto a ser vendido", "Vender Produto", JOptionPane.OK_CANCEL_OPTION));
 					qtd = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade de itens vendida", "Vender Produto", JOptionPane.OK_CANCEL_OPTION));
-					estoque.reporProduto(idP,qtd);
+					estoque.addProduto(idP,qtd);
 					p = estoque.getProduto(idP);
 					JOptionPane.showMessageDialog(null, p , "Vender Produto", JOptionPane.INFORMATION_MESSAGE);
 					break;
 				case 3:				//Excluir Produto
 					idP = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o ID do produto a ser vendido", "Vender Produto", JOptionPane.OK_CANCEL_OPTION));
 					qtd = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade de itens vendida", "Vender Produto", JOptionPane.OK_CANCEL_OPTION));
-					estoque.reporProduto(idP,qtd);
+					estoque.addProduto(idP,qtd);
 					p = estoque.getProduto(idP);
 					JOptionPane.showMessageDialog(null, p , "Vender Produto", JOptionPane.INFORMATION_MESSAGE); 
 					break;
 				case 4:				//Repor Produto
 					idP = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o ID do produto a ser reposto", "Repor Produto", JOptionPane.OK_CANCEL_OPTION));
 					qtd = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade de itens à serem repostos", "Repor Produto", JOptionPane.OK_CANCEL_OPTION));
-					estoque.reporProduto(idP,qtd);
+					estoque.addProduto(idP,qtd);
 					p = estoque.getProduto(idP);
 					JOptionPane.showMessageDialog(null, p , "Repor Produto", JOptionPane.INFORMATION_MESSAGE); 
 					break;
