@@ -2,8 +2,8 @@ public class Produto {
 	private String descricao;
 	private float precoCusto;
 	private int margemLucro;
-	private int quantidade;
 	private int quantidadeMinima;
+	private int quantidade;
 
 	public Produto(String descricao, float precoCusto, int margemLucro, int quantidade, int quantidadeMinima) {
 		this.descricao = descricao;
@@ -85,4 +85,8 @@ public class Produto {
 		return quantidade > quantidadeMinima;
 	}
 
+	@Override
+	public String toString() {
+		return descricao + "\t" + quantidade + "\t" + quantidadeMinima;
+	}
 }
