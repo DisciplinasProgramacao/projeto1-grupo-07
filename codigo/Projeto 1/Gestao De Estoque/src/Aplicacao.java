@@ -7,15 +7,18 @@ public final class Aplicacao {
 		boolean rodando = running; 
 		do {		
 			opPincipal = Integer.parseInt(JOptionPane.showInputDialog(null, "[1]Menu Produto \n[2]Menu Estoque \n[0]Sair", "Menu Principal", JOptionPane.OK_CANCEL_OPTION));
-			if(opPincipal==0) {
-				rodando = false;
-				break;
-			}else if(opPincipal==1) {
-				menuProdutos(rodando);			
-			}else if(opPincipal==2) {
-				menuEstoque(rodando);			
-			}else {
-				rodando = true;
+			switch (opPincipal) {
+				case 0:
+					rodando = false;
+					break;
+				case 1:
+					menuProdutos(rodando);
+					break;
+				case 2:
+					menuEstoque(rodando);
+					break;
+				default:
+					rodando = true;
 			}
 		}while(rodando);
 	}
