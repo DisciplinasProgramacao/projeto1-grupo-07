@@ -58,7 +58,6 @@ public class Produto {
 		} else {
 			this.margemLucro = margemLucro;
 		}
-		this.margemLucro = margemLucro;
 	}
 
 	public int getQuantidade() {
