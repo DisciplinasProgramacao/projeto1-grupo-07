@@ -86,6 +86,6 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return descricao + "\t" + quantidade + "\t" + quantidadeMinima;
+		return descricao + "	   " + quantidade + "    " + quantidadeMinima;
 	}
 }

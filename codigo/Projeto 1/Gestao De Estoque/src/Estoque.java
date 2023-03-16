@@ -26,7 +26,7 @@ public class Estoque {
 		String s = "Id - Descrição - Quantidade - Quantidade Mínima\n";
 		for (int i = 0; i < produtos.size(); i++) {
 			if (!produtos.get(i).temSuficiente())
-				s += i + "\t" + produtos.get(i).toString() + "\n";
+				s += i + "\t" + produtos.get(i) + "\n";
 		}
 
 		return s;
@@ -45,7 +45,7 @@ public class Estoque {
 	public String mostraProdutos() {
 		String s = "Id - Descrição - Quantidade - Quantidade Mínima\n";
 		for (int i = 0; i < produtos.size(); i++) {
-			s += i + "\t" + produtos.get(i).toString() + "\n";
+			s += i + "    " + produtos.get(i) + "\n";
 		}
 		return s;
 	}
